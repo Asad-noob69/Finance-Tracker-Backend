@@ -7,19 +7,13 @@ const Target = sequelize.define('Target', {
     autoIncrement: true,
     primaryKey: true,
   },
-  amount: {
+  name: {  // Changed from targetName to match frontend
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  amount: {  // Changed from targetAmount to match frontend
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
-  },
-  category: {
-    type: DataTypes.ENUM('income', 'expense'),
-    allowNull: false,
-    defaultValue: 'expense'
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW
   },
   month: {
     type: DataTypes.INTEGER,
